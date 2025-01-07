@@ -1,0 +1,17 @@
+{% extends 'works/base.html' %}
+{% block content %}
+<h1>Навыки</h1>
+<div class="block">
+    {% for project in projects %}
+    <div class="element">
+        <div class="text">
+            <h2><b> {{ project.title }} : {{ project.fio }} </b></h2>
+            <h2><a href="{{ project.url }}" target="_blank"><b>{{ project.description }}:</b></a></h2>
+            <div class="img"><img src="{{ project.image.url }}" alt=""></div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

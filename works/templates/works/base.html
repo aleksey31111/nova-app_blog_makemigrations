@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" href="{% static 'works/icon.jpg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div class="menu">
+        <div class="wrap">
+            <div class="logo">
+                <a href="{% url 'index' %}"><img src="{% static 'works/logo_novarol_1.jpg' %}" alt=""></a>
+            </div>
+            <ul>
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'blog:blogs' %}">Блог</a></li>
+
+                <li><a href="{% url 'equipments' %}">Оборудование</a></li>
+                <li><a href="{% url  'skills' %}">Навыки</a></li>
+                <li><a href="{% static 'works/Инструкция работы подсобного рабочего.pdf' %}" target="_blank">Инструкция подсобного рабочего</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="wrap">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+</body>
+</html>

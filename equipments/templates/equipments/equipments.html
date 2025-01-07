@@ -1,0 +1,22 @@
+{% extends 'works/base.html' %}
+{% block content %}
+    <h1><b>Оборудование</b></h1>
+
+        <div class="block">
+        {% for project in projects %}
+            <div class="element">
+                <div class="text">
+                    <h2><a href="{{ project.url }}" target="_blank"><b>{{ project.name }}:</b></a></h2>
+                    <p>{{ project.description|safe }}</p>
+                </div>
+                <div class="img"><img src="{{ project.image.url }}" alt=""></div>
+                <div class="text">
+                    <p>{{ project.manual|safe }}</p>
+                    <h1>{{ project.servicebility }}</h1>
+                    <h1>{{ project.defect }}</h1>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+    {% endblock content %}
